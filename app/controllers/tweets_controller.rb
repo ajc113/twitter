@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
 	def new
 		@fish="tuna"
+		@tweet = Tweet.new
 	end
 
 	def edit
