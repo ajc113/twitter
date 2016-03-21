@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+	
+	before_action :authenticate_user!
+
 	def new
 		@fish="tuna"
 		@tweet = Tweet.new
