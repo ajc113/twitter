@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet=Tweet.new(tweet_params)
+		@tweet.user=current_user
 		@tweet.save
 		redirect_to new_tweet_path
 	end	
