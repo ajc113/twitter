@@ -17,8 +17,12 @@ class TweetsController < ApplicationController
 	def create
 		@tweet=Tweet.new(tweet_params)
 		@tweet.user=current_user
-		@tweet.save
-		redirect_to new_tweet_path
+		if @tweet.save
+			flash[:success]= "Congrats on tweet"
+			redirect_to new_tweet_path
+		else 
+			#will come back to this later
+		end
 	end	
 
 	private

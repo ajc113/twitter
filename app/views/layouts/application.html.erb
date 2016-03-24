@@ -12,8 +12,15 @@
 
 		<%= render 'layouts/navbar' %>
 
-		<div class="container">
 
+		<div class="container">
+			<% if flash.any? %>
+				<%= flash.each do |key, value|  %>
+					<div class="alert alert-<%= key%>" role="alert">
+						<%= value %>
+					</div>	
+				<% end %>
+			<% end %>
 		<%= yield %>
 
 		</div>
