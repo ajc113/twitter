@@ -21,6 +21,9 @@ class TweetsController < ApplicationController
 			flash[:success]= "Congrats on tweet"
 			redirect_to new_tweet_path
 		else 
+			puts "#{@tweet.errors}\n\n"
+			puts "#{@tweet.errors.inspect}"
+			render 'new'
 			#will come back to this later
 		end
 	end	
