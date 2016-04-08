@@ -1,6 +1,7 @@
 
 
 
+
 The fish we are catching today is <%= @fish %>
 <%= simple_form_for @tweet  do |f| %>
   <%= f.input :content %>
@@ -8,6 +9,17 @@ The fish we are catching today is <%= @fish %>
 <% end %>
 
 <hr />
+
+<% if @tweet.errors.any? %>
+	<div class="alert alert-danger" role="alert">
+
+		<% @tweet.errors.each do |attribute, error_message| %>
+	      
+	    	 <%= error_message %> 
+
+		<% end %>  
+	</div>
+<% end %>
 
 <%= form_for @tweet do |f| %>
 	<div class="form-group">
