@@ -10,8 +10,9 @@ The fish we are catching today is <%= @fish %>
 <hr />
 
 <%= form_for @tweet do |f| %>
-
-<%= f.text_field :content %>
-<%= f.submit "Submit" %>
+	<div class="form-group">
+		<%= f.text_field :content, class: 'form-control', placeholder: "Write your tweet now" %>
+	</div>
+	<%= f.submit "Submit", class: 'btn btn-default'%>
 
 <% end %>
