@@ -6,3 +6,12 @@ The fish we are catching today is <%= @fish %>
   <%= f.input :content %>
   <%= f.button :submit %>
 <% end %>
+
+<hr />
+
+<%= form_for @tweet do |f| %>
+
+<%= f.text_field :content %>
+<%= f.submit "Submit" %>
+
+<% end %>
